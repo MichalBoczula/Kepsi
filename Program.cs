@@ -1,3 +1,4 @@
+using KeepItShort.Persistance.DependencyInjection;
 using Microsoft.AspNetCore.Mvc;
 using System.Net.Http.Headers;
 using System.Text;
@@ -6,6 +7,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+builder.Services.AddPersistance(builder.Configuration);
 
 var app = builder.Build();
 
